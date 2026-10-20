@@ -1,14 +1,14 @@
 # NovaSense — Running project log
 
-Last updated: 21 October 2026 · Current phase: website layout exploration
+Last updated: 21 October 2026 · Current phase: database foundation; UI revamp deferred
 
 This is the living record of progress and decisions. Update at meaningful milestones, when the user changes direction, and before each work handoff. Record confirmed decisions separately from proposals. Dates use Asia/Kolkata.
 
 ## Current status
 
-**Ready for review:** a local, interactive homepage and product-page layout prototype. The direction is editorial and asymmetrical, using distinctive typography, product photography, a recurring contour motif, and a sample journal interaction. Desktop and mobile layouts and core interactions have been checked.
+**Database setup ready:** two Supabase SQL migrations, repeatable synthetic seed data, access policies, audit triggers, and a PostgreSQL validation harness. 31 checks passed locally. No hosted Supabase project exists; the user requested setup files only.
 
-**Next:** review the visual direction with the user before extracting the design system and expanding the application. The initial milestone has been pushed to the public repository.
+**Next:** create a development Supabase project when ready, apply migrations and seed, provision an admin, then verify hosted Auth/Realtime before UI integration. The user says the current UI needs substantial changes; preserve it as an earlier layout study, not an approved design.
 
 ## Confirmed decisions
 
@@ -23,6 +23,9 @@ This is the living record of progress and decisions. Update at meaningful milest
 | The website layout must be unconventional and visually distinctive. | User, 21 Oct 2026 |
 | Maintain this running document beside the work and update it regularly. | User, 21 Oct 2026 |
 | Create a public GitHub repository and push ongoing completed work. | User, 21 Oct 2026 |
+| Pause UI changes and create the database foundation first. Current layout needs a substantial later revamp. | User, 21 Oct 2026 |
+| No Supabase project yet; prepare database setup files only. | User selection, 21 Oct 2026 |
+| Conserve the remaining usage with one bounded database pass and concise handoffs. | User, 21 Oct 2026 |
 
 ## Working proposals — not yet confirmed
 
@@ -50,6 +53,9 @@ This is the living record of progress and decisions. Update at meaningful milest
 | 21 Oct | Create public GitHub repository | Complete: https://github.com/kanishksingh3012/novasense-dxp. Visibility verified as PUBLIC; default branch is main. |
 | 21 Oct | Verify layout and interactions | Complete. Desktop/mobile inspection; navigation, journal, tabs/keyboard, dialog, and FAQ checks passed. Fixed mobile headline wrap and image cropping. Local asset/link and JS syntax checks passed. |
 | 21 Oct | Push initial milestone | Complete. Commit `72d2176` pushed to `origin/main`: brand, journey, generated assets, responsive layout study, and running log. |
+| 21 Oct | Database foundation | Complete locally: 8 public tables plus private admin allowlist; RLS, constraints, indexes, timestamps, audit triggers, and scoped Realtime publication. |
+| 21 Oct | Synthetic seed | Complete: 50 profiles/contexts, 40 devices, 40 orders, 420 readings, 30 check-ins; original five-bucket distribution retained. |
+| 21 Oct | Database verification | 31 embedded PostgreSQL checks passed, including migration execution, repeatable seed, RLS, audit attribution, constraints, and demo-session isolation. Hosted Auth/Realtime not yet tested. |
 
 ## Current deliverables
 
@@ -65,6 +71,17 @@ This is the living record of progress and decisions. Update at meaningful milest
 - [Layout review notes and verification](docs/05-layout-review.md)
 - [New image prompts and review](docs/brand/04-layout-image-prompts.md)
 - Public repository: https://github.com/kanishksingh3012/novasense-dxp
+- [Database setup and schema guide](docs/06-database-setup.md)
+- [Core migration](supabase/migrations/202610210001_core.sql)
+- [Realtime publication migration](supabase/migrations/202610210002_realtime.sql)
+- [Repeatable seed](supabase/seed.sql)
+- [PostgreSQL validation harness](database-tests/validate.mjs)
+
+## Usage-conscious workflow
+
+The user's remaining allowance is approximate; no exact token quota is known or guaranteed. Keep work bounded: reuse this log and the database handoff, implement one cohesive slice, run targeted checks once, fix observed failures, update the log, and push. Avoid parallel agents, further image generation, repeated broad research, UI work, and speculative integrations in this phase.
+
+Resume from `docs/06-database-setup.md`; it contains the schema map, application access model, setup sequence, and deferred decisions. No need to reread all brand documents to deploy this foundation.
 
 ## Source-control workflow
 
@@ -82,4 +99,4 @@ Local review while the server is running: http://127.0.0.1:4173/review.html. Use
 
 ## Implementation boundary
 
-Current work is a local layout study with browser-local interactions. Production authentication, database, admin console, checkout, coaching integration, and a native mobile app have not been built. No hosted site has been published.
+The local layout study remains available, but its design is pending a later revamp. Database SQL and synthetic seed files are implemented and tested locally; no hosted database is provisioned. Production authentication, admin UI, checkout, coaching integration, and a native mobile app are not built. No hosted site has been published.

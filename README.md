@@ -4,7 +4,7 @@ A fictional cycle-awareness brand and digital experience platform study. The pro
 
 ## Current phase
 
-Brand and journey planning, plus an interactive website layout prototype. The production application, database, admin panel, payments, and native mobile application are not implemented.
+Database foundation is prepared and tested locally. The existing website layout is an earlier study awaiting a substantial revamp. No hosted Supabase project, production application, admin panel, payments, or native mobile application is deployed.
 
 Start with [the running project log](PROJECT-LOG.md) for confirmed decisions, current progress, and next steps.
 
@@ -29,6 +29,9 @@ The preview uses HTML, CSS, and JavaScript with no build step. Fonts load from G
 - `docs/04-website-and-customer-journey.md`: proposed journeys and adaptation rules.
 - `design-preview/`: responsive homepage and product layout study.
 - `assets/brand/`: original generated concept images, retained by version.
+- `supabase/migrations/` and `supabase/seed.sql`: database setup and synthetic data.
+- `database-tests/`: reproducible embedded PostgreSQL checks.
+- `docs/06-database-setup.md`: schema map, security model, and Supabase setup steps.
 - `novasense_dxp_prd_and_claude_code_instructions.md`: original project brief.
 
 ## Milestone workflow

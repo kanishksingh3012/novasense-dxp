@@ -1,0 +1,12 @@
+{
+  "name": "novasense-database-tests",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node validate.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.10"
+  }
+}

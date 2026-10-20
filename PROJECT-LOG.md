@@ -8,7 +8,7 @@ This is the living record of progress and decisions. Update at meaningful milest
 
 **Ready for review:** a local, interactive homepage and product-page layout prototype. The direction is editorial and asymmetrical, using distinctive typography, product photography, a recurring contour motif, and a sample journal interaction. Desktop and mobile layouts and core interactions have been checked.
 
-**Next:** push the initial milestone to the public repository, then review the visual direction with the user before extracting the design system and expanding the application.
+**Next:** review the visual direction with the user before extracting the design system and expanding the application. The initial milestone has been pushed to the public repository.
 
 ## Confirmed decisions
 
@@ -47,8 +47,9 @@ This is the living record of progress and decisions. Update at meaningful milest
 | 21 Oct | Develop unconventional homepage and product layout | Complete for review. Local visual prototype with desktop/tablet/mobile review controls. |
 | 21 Oct | Generate refined packaging and editorial wear imagery | Complete. Product hero v2 and editorial wear v1 saved with exact prompts; earlier assets preserved. |
 | 21 Oct | Establish running project log | Complete; opened beside the work. |
-| 21 Oct | Create public GitHub repository | Complete: https://github.com/kanishksingh3012/novasense-dxp. Initial source push pending layout checks. |
+| 21 Oct | Create public GitHub repository | Complete: https://github.com/kanishksingh3012/novasense-dxp. Visibility verified as PUBLIC; default branch is main. |
 | 21 Oct | Verify layout and interactions | Complete. Desktop/mobile inspection; navigation, journal, tabs/keyboard, dialog, and FAQ checks passed. Fixed mobile headline wrap and image cropping. Local asset/link and JS syntax checks passed. |
+| 21 Oct | Push initial milestone | Complete. Commit `72d2176` pushed to `origin/main`: brand, journey, generated assets, responsive layout study, and running log. |
 
 ## Current deliverables
 
@@ -68,6 +69,8 @@ This is the living record of progress and decisions. Update at meaningful milest
 ## Source-control workflow
 
 Visibility is public, as explicitly requested. Update this log at meaningful milestones, check affected work, commit a cohesive change, and push it to the repository. Preserve secrets and local machine files through `.gitignore`. Public source publication and hosted website deployment are separate actions; no hosted website has been deployed in this milestone.
+
+Local review while the server is running: http://127.0.0.1:4173/review.html. Use the review controls to switch between pages and desktop/tablet/mobile widths. Restart instructions are in README.md.
 
 ## Open design/product decisions
 
